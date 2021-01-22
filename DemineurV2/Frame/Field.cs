@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Demineur;
+using System;
 namespace Démineur
 {
     public class Field
@@ -57,7 +58,7 @@ namespace Démineur
 
                 for (int i = 0; i < NB_BOXES - 1; i++)
                 {
-                    m_FieldArray[i] = new Box();
+                    m_FieldArray[i] = new Box("Vide");
                 }
 
                 m_DrawString = new string[m_iHeight][];
