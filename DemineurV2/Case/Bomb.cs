@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace Demineur
 {
-    public class Bomb : Tab
+    public class Bomb 
     {
+        public static int BombFound { get; internal set; }
+
         internal static void Triggered()
         {
             throw new NotImplementedException();
