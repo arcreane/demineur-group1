@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Demineur;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Demineur
 {
-    public abstract class Tab : Box
+    public class Tab
     {
         static Random rand = new Random();
 
@@ -24,7 +25,7 @@ namespace Demineur
 
             //create the tab 
 
-        public void Grille (object self) 
+        public void Grille (object self ) 
         {
            for ( i in range(self.m_Map)) 
            {

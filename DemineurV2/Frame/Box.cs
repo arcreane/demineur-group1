@@ -25,10 +25,10 @@ namespace Demineur
                     return "[#]";
                 }
             }
-            set
+           /* set
             {
                 Console.WriteLine("Erreur tu ne peux pas changer cette valeur");
-            }
+            }*/
         }
 
 
@@ -51,9 +51,9 @@ namespace Demineur
                 case "Empty":
                     this.Sprite = "[ ]";
                     break;
-                default:
+                /*default:
                     Console.WriteLine("Erreur Box");
-                    break;
+                    break;*/
             }
             this.Sprite_Show = this.Sprite;
         }
