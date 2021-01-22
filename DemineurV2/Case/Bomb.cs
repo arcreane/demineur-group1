@@ -12,6 +12,9 @@ namespace Demineur
 
         internal static void Triggered()
         {
+            
+            if (BombFound /*condition de bomb trouvé*/  )
+            
             throw new NotImplementedException();
         }
 
