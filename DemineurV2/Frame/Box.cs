@@ -60,23 +60,31 @@ namespace Demineur
         public void Flagged()
         {
             
-            if (this.Sprite != "[!]" && this.Visible == false && Flag.Flags_available > 0)
+            if (this.Sprite_Show != "[!]" && this.Visible == false && Flag.Flags_available > 0)
             {
                 this.Sprite_Show = "[!]";
                 Flag.Flags_available -= 1;
+                if (this.Sprite_Show == "O")
+                {
+                    Bomb.BombFound += 1;
+                }
             }
-            else if (Flag.Flags_available < Flag.Flags_available_max && this.Visible == false && this.Sprite == "[!]")
+            else if (Flag.Flags_available < Flag.Flags_available_max && this.Visible == false && this.Sprite_Show == "[!]")
             {
                 Flag.Flags_available += 1;
                 this.Sprite_Show = this.Sprite;
+                if (this.Sprite_Show == "O")
+                {
+                    Bomb.BombFound -= 1;
+                }
             }
         }
         public void Digged()
         {
-            if(Visible == false && this.Sprite != "[!]")
+            if(Visible == false && this.Sprite_Show != "[!]")
             {
                 this.Visible = true;
-                if (this.Sprite == "[0]")
+                if (this.Sprite_Show == "[0]")
                 {
                     Bomb.Triggered();
                 }
