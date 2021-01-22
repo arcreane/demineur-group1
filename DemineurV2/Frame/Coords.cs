@@ -1,5 +1,5 @@
 ﻿using System;
-namespace Démineur
+namespace DemineurV2
 {
     public class Coords
     {
