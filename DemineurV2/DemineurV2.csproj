@@ -46,8 +46,10 @@
     <Compile Include="Case\Bomb.cs" />
     <Compile Include="Case\Flag.cs" />
     <Compile Include="Frame\Box.cs" />
-    <Compile Include="Frame\Tab.cs" />
-    <Compile Include="Jeu.cs" />
+    <Compile Include="Frame\Field.cs" />
+	<Compile Include="Frame\Coords.cs" />
+	<Compile Include="Frame\FieldBoxes.cs" />
+    <Compile Include="MineSweeper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

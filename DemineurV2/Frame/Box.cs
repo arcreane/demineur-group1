@@ -73,10 +73,6 @@ namespace Demineur
             {
                 Flag.Flags_available += 1;
                 this.Sprite_Show = this.Sprite;
-                if (this.Sprite_Show == "O")
-                {
-                    Bomb.BombFound -= 1;
-                }
             }
         }
         public void Digged()

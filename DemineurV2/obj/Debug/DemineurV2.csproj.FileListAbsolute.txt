@@ -1,0 +1,2 @@
+C:\Users\Macaron\Desktop\Projets\DemineurV2\DemineurV2\obj\Debug\DemineurV2.csprojAssemblyReference.cache
+C:\Users\Macaron\Desktop\Projets\DemineurV2\DemineurV2\obj\Debug\DemineurV2.csproj.CoreCompileInputs.cache
