@@ -4,21 +4,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Demineur
+namespace DemineurV2
 {  
-    class Box
+    public class Box
     {
-        public bool Visible = false;
+        public Bomb MyBomb { get; set; } = null;
+        public bool IsVisible { get; set; }
+        public bool IsFlagged { get; set; }
+        public int NbAdjacentBomb { get; set; }
         string Box_Type = "Error";
-        string Sprite = "E";
+        public string Sprite { get => NbAdjacentBomb > 0 ? $"[{NbAdjacentBomb}]" : "[ ]"; }
         string Sprite_Show = "E";
         public string Show
         {
             get
             {
-                if (this.Visible == true || this.Sprite == "[!]")
+                if (this.IsVisible == true || !IsFlagged )
                 {
-                    return this.Sprite;
+                    return MyBomb != null ? MyBomb.Sprite : this.Sprite;
+                }
+                else if(IsFlagged)
+                {
+                    return "[!]";
                 }
                 else
                 {
@@ -32,9 +39,9 @@ namespace Demineur
         }
 
 
-        public Box(string m_Box_Type,int Number = 0)//" Box Boite = new Box("Flag");
+        public Box(/*string m_Box_Type,int Number = 0*/)//" Box Boite = new Box("Flag");
         {
-            this.Box_Type = m_Box_Type;
+            /*this.Box_Type = m_Box_Type;
             switch (m_Box_Type)
             {
                 
@@ -43,7 +50,7 @@ namespace Demineur
                     
                     break;
                 case "Bomb":
-                    this.Sprite = "[O]";
+                    MyBomb = new Bomb();
                     break;
                 case "Number":
                     this.Sprite = $"[{Number}]";
@@ -54,11 +61,11 @@ namespace Demineur
                 default:
                     Console.WriteLine("Erreur Box");
                     break;
-            }
+            }*/
             this.Sprite_Show = this.Sprite;
         }
         public void Flagged()
-        {
+        {/*
             
             if (this.Sprite_Show != "[!]" && this.Visible == false && Flag.Flags_available > 0)
             {
@@ -77,16 +84,16 @@ namespace Demineur
                 {
                     Bomb.BombFound -= 1;
                 }
-            }
+            }*/
         }
         public void Digged()
         {
-            if(Visible == false && this.Sprite_Show != "[!]")
+            if(IsVisible == false && this.Sprite_Show != "[!]")
             {
-                this.Visible = true;
-                if (this.Sprite == "[0]")
+                this.IsVisible = true;
+                if (MyBomb != null)
                 {
-                    Bomb.Triggered();
+                    MyBomb.Triggered();
                 }
             }
         }

@@ -1,5 +1,5 @@
 ﻿using System;
-namespace Démineur
+namespace DemineurV2
 {
     public class FieldBoxes
     {
@@ -12,6 +12,11 @@ namespace Démineur
         internal virtual void Draw(String[][] p_DrawString)
         {
 
+        }
+
+        public static implicit operator FieldBoxes(Box v)
+        {
+            throw new NotImplementedException();
         }
     }
 }

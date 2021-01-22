@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Timers;
 
-namespace Démineur
+namespace DemineurV2
 {
     public class MineSweeper
     {
@@ -12,6 +12,7 @@ namespace Démineur
         {
             deadlyGround = Field.getInstance();
             deadlyGround.init();
+            deadlyGround.Draw();
 
             gameTimer = new Timer();
             gameTimer.Elapsed += MineSweeperLoop;

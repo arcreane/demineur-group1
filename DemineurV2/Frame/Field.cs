@@ -1,19 +1,18 @@
 ﻿using System;
-namespace Démineur
+namespace DemineurV2
 {
     public class Field
     {
         private const int NB_BOXES = 100;
         private const int NB_BOMBS = 40;
 
-        private FieldBoxes[] m_FieldArray;
+        private Box[][] m_FieldArray;
         //0,0, is defined as being upper left corner
 
         private int m_iWidth;
         private int m_iHeight;
 
         static Field s_FieldInstance;
-        String[][] m_DrawString;
        
         public static Field getInstance()
         {
@@ -25,18 +24,15 @@ namespace Démineur
 
         internal void Draw()
         {
-            foreach (var elemt in m_FieldArray)
-            {
-                elemt.Draw(m_DrawString);
-            }
             System.Text.StringBuilder toDisplay = new System.Text.StringBuilder("");
-            for (int i = 0; i < m_iHeight; i++)
+
+            foreach (var line in m_FieldArray)
             {
-
-                var line = m_DrawString[i];
-                var linejoined = String.Join("", line);
-                toDisplay.Append(linejoined).Append("\n");
-
+                foreach (var element in line)
+                {
+                    toDisplay.Append(element.Show); ;
+                }
+                toDisplay.Append("\n");
             }
             Console.WriteLine(toDisplay.ToString());
         }
@@ -53,14 +49,25 @@ namespace Démineur
 
             if (m_FieldArray ==  null)
             {
-                m_FieldArray = new FieldBoxes[NB_BOXES];
+                m_FieldArray = new Box[m_iWidth][];
 
-                for (int i = 0; i < NB_BOXES - 1; i++)
+                for (int i = 0; i < m_iWidth; i++)
                 {
-                    m_FieldArray[i] = new Box();
+                    m_FieldArray[i] = new Box[m_iHeight];
+                    for (int j = 0; j < m_FieldArray[i].Length; j++)
+                    {
+                        m_FieldArray[i][j] = new Box();
+                        //MaListe.Add(Tuple(i,j)
+                        //for (i, nb bombes)
+                        //V->reccup.size(maliste)
+                        //reccup(maliste)
+                        //remove dans ma liste les coords à l'index v -> liste perds un élément
+                        //calcul des valeurs des cases adjacentes
+                        m_FieldArray[i][j].MyBomb = new Bomb();
+                    }
                 }
 
-                m_DrawString = new string[m_iHeight][];
+                /*m_DrawString = new string[m_iHeight][];
                 for (int i = 0; i < m_iHeight; i++)
                 {
                     m_DrawString[i] = new string[m_iWidth];
@@ -68,7 +75,7 @@ namespace Démineur
                     {
                         m_DrawString[i][j] = ".";
                     }
-                }
+                }*/
             }
         }
 
