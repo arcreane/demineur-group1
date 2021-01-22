@@ -13,5 +13,10 @@ namespace DemineurV2
         {
 
         }
+
+        public static implicit operator FieldBoxes(Box v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

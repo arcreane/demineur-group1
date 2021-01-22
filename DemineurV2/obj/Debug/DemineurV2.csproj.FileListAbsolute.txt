@@ -1,2 +1,7 @@
 /Users/n0reply/Documents/Projet-Demineur/demineur-group1/DemineurV2/obj/Debug/DemineurV2.csprojAssemblyReference.cache
 /Users/n0reply/Documents/Projet-Demineur/demineur-group1/DemineurV2/obj/Debug/DemineurV2.csproj.CoreCompileInputs.cache
+/Users/n0reply/Documents/Projet-Demineur/demineur-group1/DemineurV2/bin/Debug/DemineurV2.exe.config
+/Users/n0reply/Documents/Projet-Demineur/demineur-group1/DemineurV2/bin/Debug/DemineurV2.exe
+/Users/n0reply/Documents/Projet-Demineur/demineur-group1/DemineurV2/bin/Debug/DemineurV2.pdb
+/Users/n0reply/Documents/Projet-Demineur/demineur-group1/DemineurV2/obj/Debug/DemineurV2.exe
+/Users/n0reply/Documents/Projet-Demineur/demineur-group1/DemineurV2/obj/Debug/DemineurV2.pdb

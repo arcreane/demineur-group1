@@ -12,6 +12,7 @@ namespace DemineurV2
         {
             deadlyGround = Field.getInstance();
             deadlyGround.init();
+            deadlyGround.Draw();
 
             gameTimer = new Timer();
             gameTimer.Elapsed += MineSweeperLoop;

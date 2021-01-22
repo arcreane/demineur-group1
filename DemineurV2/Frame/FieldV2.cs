@@ -8,8 +8,17 @@ namespace DemineurV2
 
         public Coords MyCoords { get; set; }
 
-        public FieldV2()
+        static FieldV2 s_FieldInstance;
+
+        private FieldBoxes[] m_FieldArray;
+
+        public static FieldV2 getInstance()
         {
+            if (s_FieldInstance == null)
+                s_FieldInstance = new FieldV2();
+
+            return s_FieldInstance;
         }
+
     }
 }
